@@ -6,12 +6,13 @@
 
  date    : 2024/01/14
 
- update : 2024/01/16
+ update : 2024/01/16 
 
 ***
 
-React + express SSR, sample
+React SPA + express SSR, sample
 
+* vercel deploy, sample
 ***
 ### dev-start
 
