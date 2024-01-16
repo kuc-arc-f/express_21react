@@ -6,7 +6,7 @@
 
  date    : 2024/01/14
 
- update :
+ update : 2024/01/15
 
 ***
 
@@ -14,6 +14,8 @@ React + express SSR, sample
 
 ***
 ### blog
+
+https://zenn.dev/knaka0209/scraps/44a812684ddbf4
 
 ***
 

@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client'
 function App(){
   return(
     <div>
-      <h1>app.tsx</h1>
+      <h1>hello</h1>
     </div>
   )
 }
