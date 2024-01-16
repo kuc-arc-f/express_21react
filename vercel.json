@@ -15,7 +15,7 @@
     "routes": [
       { "handle": "filesystem" },
       {
-        "src": "/",
+        "src": "/.*",
         "dest": "/dist/index.js"
       }
     ]

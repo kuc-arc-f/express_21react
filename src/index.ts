@@ -4,13 +4,22 @@ const app = express();
 import { renderToString } from 'react-dom/server';
 //
 import {Csr} from './pages/App';
-
+const routes = require('./routes/index');
 //
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-//
+// route
+app.use('/', routes);
+/*
+app.get('/api/test', (req: any, res: any) => {
+  try {
+    res.send({ name: "ok, /api/test" });
+  } catch (error) {
+    res.sendStatus(500);
+  }
+});
 app.get('/test', (req: any, res: any) => {
   try {
     res.send({ name: "welcome" });
@@ -18,7 +27,8 @@ app.get('/test', (req: any, res: any) => {
     res.sendStatus(500);
   }
 });
-//Csr
+*/
+//
 app.get('/*', (req: any, res: any) => {
   try {
     res.send(renderToString(Csr()));
