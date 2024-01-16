@@ -12,22 +12,14 @@ app.use(express.static('public'));
 
 // route
 app.use('/', routes);
-/*
-app.get('/api/test', (req: any, res: any) => {
+
+app.get('/api/test1', (req: any, res: any) => {
   try {
-    res.send({ name: "ok, /api/test" });
+    res.send({ name: "ok, /api/test1" });
   } catch (error) {
     res.sendStatus(500);
   }
 });
-app.get('/test', (req: any, res: any) => {
-  try {
-    res.send({ name: "welcome" });
-  } catch (error) {
-    res.sendStatus(500);
-  }
-});
-*/
 //
 app.get('/*', (req: any, res: any) => {
   try {
