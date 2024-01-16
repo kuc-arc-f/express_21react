@@ -13,6 +13,13 @@
 React + express SSR, sample
 
 ***
+### dev-start
+
+```
+npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/public/static/client.js
+yarn dev
+```
+***
 ### blog
 
 https://zenn.dev/knaka0209/scraps/44a812684ddbf4
