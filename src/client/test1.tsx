@@ -4,9 +4,19 @@ function Page() {
   //
   const testProc = async function(){
     console.log("#testProc");
-    const res = await fetch("/api/test1");
+//    const res = await fetch("/api/test1");
+    const item  = {
+      "api_url": "/test/get_list",
+      "userId": 0,
+    }
+    const body: any = JSON.stringify(item);		
+    const res = await fetch("/api/common/send_post", {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},      
+      body: body
+    });
     const json = await res.json()
-console.log(json); 
+console.log(json.data); 
   }
   //
   return (

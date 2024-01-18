@@ -5,16 +5,31 @@ import { renderToString } from 'react-dom/server';
 //
 import {Csr} from './pages/App';
 const routes = require('./routes/index');
+import testRouter from './routes/test';
+import commonRouter from './routes/common';
 //
+require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // route
 app.use('/', routes);
+app.use('/api/test', testRouter);
+app.use('/api/common', commonRouter);
 
+app.post('/api/post1', (req: any, res: any) => {
+  try {
+    //
+console.log(req.body);
+    res.send({ name: "ok, /api/test1" });
+  } catch (error) {
+    res.sendStatus(500);
+  }
+});
 app.get('/api/test1', (req: any, res: any) => {
   try {
+console.log("url=", process.env.API_URL);
     res.send({ name: "ok, /api/test1" });
   } catch (error) {
     res.sendStatus(500);
