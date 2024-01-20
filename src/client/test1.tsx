@@ -1,10 +1,14 @@
+import {useState, useEffect}  from 'react';
+import { Link } from 'react-router-dom';
 import Head from '../components/Head'
 //
+let pageItems: any[] = [];
+//
 function Page() {
+  const [updatetime, setUpdatetime] = useState<string>("");
   //
   const testProc = async function(){
     console.log("#testProc");
-//    const res = await fetch("/api/test1");
     const item  = {
       "api_url": "/test/get_list",
       "userId": 0,
@@ -16,6 +20,8 @@ function Page() {
       body: body
     });
     const json = await res.json()
+    pageItems = json.data;
+    setUpdatetime(new Date().toString());
 console.log(json.data); 
   }
   //
@@ -29,8 +35,20 @@ console.log(json.data);
     <hr className="my-2" />
     <button className="btn-purple" onClick={()=>testProc()}>Test
     </button>
+    <hr className="my-1" />
+    {pageItems.map((item: any ,index: number) => {
+    return (
+    <div key={index}>
+        <h3 className="text-3xl font-bold">{item.title}</h3>
+        <span>ID: {item.id}, {item.createdAt}</span>
+        <hr />
+    </div>
+    )
+    })}    
   </div>
   );
 }
 
 export default Page;
+/*
+*/
