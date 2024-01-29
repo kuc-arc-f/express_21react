@@ -6,7 +6,7 @@
 
  date    : 2024/01/14
 
- update : 2024/01/20 
+ update : 2024/01/29 
 
 ***
 
@@ -17,8 +17,13 @@ React SPA + express SSR, sample
 ### dev-start
 
 ```
-npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/public/static/client.js
+npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/static/client.js
 yarn dev
+```
+
+* watch
+```
+npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/static/client.js --watch
 ```
 ***
 ### blog
