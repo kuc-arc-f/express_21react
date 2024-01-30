@@ -13,6 +13,16 @@
 React SPA + express SSR, sample
 
 * vercel deploy, sample
+
+***
+### Setup
+
+* .env
+* if use, external api server
+
+```
+API_URL=http://localhost:4000
+```
 ***
 ### dev-start
 
