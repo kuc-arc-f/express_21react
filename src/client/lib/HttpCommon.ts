@@ -1,5 +1,5 @@
 import LibConfig from './LibConfig';
-require('dotenv').config();
+//require('dotenv').config();
 //
 const HttpCommon = {
   /**
@@ -25,11 +25,10 @@ const HttpCommon = {
   serverPost: async function(item: any, path: string): Promise<any>
   {
     try {
-      const url = process.env.POSTGRES_USER;
-      //     const apiKey = import.meta.env.PUBLIC_API_KEY;
-console.log("#url.apiKey=" + url);
+//      const url = process.env.API_URL;
+      const url = "";
+//console.log("#url=" + url);
       item.api_key = "";
-return;
       const body: any = JSON.stringify(item);		
       const res = await fetch(path, {
         method: 'POST',

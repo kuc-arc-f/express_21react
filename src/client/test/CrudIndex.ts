@@ -16,7 +16,6 @@ const CrudIndex = {
                 userId: 0,
             }
 console.log(postItem); 
-//            const json = await HttpCommon.serverPost(postItem, "/test/get_list");
             const json = await HttpCommon.serverPost(postItem, "/test/get_list");
 //console.log(json);      
             let items: any[] = [];
@@ -43,7 +42,18 @@ console.log(postItem);
 //            values.content = "";
             values.completed = 1;
 console.log(values);
-            const json = await HttpCommon.serverPost(values, '/test/create');
+            const item = {
+                "api_url": "/test/create",
+                "api_key": "",
+                "title": values.title,
+                "content": "",
+                "completed": 0,
+                "userId": 100
+            };
+//console.log(item);
+/*
+*/
+            const json = await HttpCommon.serverPost(item, "/api/common/send_post");
 console.log(json);
             if (json.ret ===  LibConfig.OK_CODE) {
                 ret = true;

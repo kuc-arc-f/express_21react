@@ -12,7 +12,9 @@ require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+//
 console.log("env=", process.env.NODE_ENV);
+//console.log("API_URL=", process.env.API_URL);
 
 // route
 app.use('/', routes);
