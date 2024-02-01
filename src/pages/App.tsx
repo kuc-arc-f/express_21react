@@ -6,6 +6,12 @@ export function Csr() {
     <html>
         <head>
         <title>welcome</title>
+        <div id="root"></div>
+        {(process.env.NODE_ENV === "develop") ? (
+            <link href="/static/main.css" rel="stylesheet"></link>
+        ): (
+            <link href="/public/static/main.css" rel="stylesheet"></link>
+        )}        
         </head>
         <div id="root"></div>
         {(process.env.NODE_ENV === "develop") ? (
