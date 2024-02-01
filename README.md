@@ -6,7 +6,7 @@
 
  date    : 2024/01/14
 
- update : 2024/01/30  
+ update : 2024/02/01  
 
 ***
 
@@ -34,6 +34,13 @@ yarn dev
 * watch
 ```
 npx esbuild --bundle ./src/client.tsx --format=esm --minify --outfile=./public/static/client.js --watch
+```
+
+***
+### tailwindcss
+
+```
+npx tailwindcss -i ./src/main.css -o ./public/static/main.css
 ```
 ***
 ### blog
